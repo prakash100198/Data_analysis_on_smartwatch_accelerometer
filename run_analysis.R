@@ -20,7 +20,7 @@ nrow(subject_train)
 variable_names<-read.table("features.txt")
 
 
-colnames(test)<-variable_names$V2
+colnames(test)<-variable_names$V2   #V2 is the second column in features.txt containing variable names
 View(test)
 colnames(train)<-variable_names$V2
 View(train)
@@ -39,24 +39,19 @@ View(subject_clubbed)
 activity_test_train<-cbind(activity_clubbed,traintest_clubbed)
 View(activity_test_train)
 
-
-
-#Q1
 finaltesttrain<-cbind(subject_clubbed,activity_test_train)
 View(finaltesttrain)
 
-#Q2
 mean_sd_final<-finaltesttrain[,grep("[Mm]ean|[sS]td",colnames(finaltesttrain))]
 View(mean_sd_final)
 
-#Q3
 final_with_activity_name<-ifelse(finaltesttrain$activity==1,"WALKING",ifelse(finaltesttrain$activity==2,"WALKING_UPSTAIRS",ifelse(finaltesttrain$activity==3,"WALKING_DOWNSTAIRS",ifelse(finaltesttrain$activity==4,"SITTING",ifelse(finaltesttrain$activity==5,"STANDING","LAYING")))))
 finaltesttrain[,2]=final_with_activity_name
 View(finaltesttrain)
 
 tidydata<-cbind(finaltesttrain[,1:2],mean_sd_final)
 View(tidydata)
-#Q4
+
 names(tidydata)<-gsub("^t","Time",names(tidydata))
 names(tidydata)<-gsub("Acc","Accelerometer",names(tidydata))
 names(tidydata)<-gsub("-mean()","Mean",names(tidydata))
