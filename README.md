@@ -1,6 +1,6 @@
 # Data_analysis_on_smartwatch_accelerometer
 This data analysis is based on the idea that how accelerometer on Samsung smartphone produces data on the basis of 6 activities(walking,walking_upstairs,walking_downstairs,sitting,standing,laying) performed by human being on daily basis.
-This repository is a Prakash Kumar's submission for Getting and Cleaning Data course project. It has the instructions on how to run analysis on Human Activity recognition dataset.
+It has the instructions on how to run analysis on Human Activity recognition dataset.
 
 ## Dataset
  [Human activity recognition using smartphone](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
